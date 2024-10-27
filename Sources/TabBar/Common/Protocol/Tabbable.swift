@@ -27,6 +27,7 @@ import SwiftUI
  A type that represents an item of your `TabBar` component.
  */
 public protocol Tabbable: Hashable {
+    
     /// Icon name of `TabBar's` item.
     var image: TabImage { get }
     
@@ -35,20 +36,13 @@ public protocol Tabbable: Hashable {
 
 }
 
-extension Tabbable {
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(self.title)
-    }
-}
-
 public extension Tabbable {
-    
-    var icon: Image {
+
+    public var icon: Image {
         return self.image.image
     }
     
-    var selectedIcon: Image {
+    public var selectedIcon: Image {
         return self.image.selected
     }
 }

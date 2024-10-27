@@ -101,7 +101,6 @@ public struct TabBar<TabItem: Tabbable, Content: View>: View {
             ZStack {
                 self.content
                     .environmentObject(self.selectedItem)
-                    .padding(.bottom, 50)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
 
                 VStack {

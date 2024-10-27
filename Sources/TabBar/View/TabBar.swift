@@ -49,8 +49,8 @@ public struct TabBar<TabItem: Tabbable, Content: View>: View {
     private let selectedItem: TabBarSelection<TabItem>
     private let content: Content
     
-    private var tabItemStyle : AnyTabItemStyle
-    private var tabBarStyle  : AnyTabBarStyle
+    private var tabItemStyle: AnyTabItemStyle
+    private var tabBarStyle: AnyTabBarStyle
     
     @State private var items: [TabItem]
     
@@ -83,8 +83,7 @@ public struct TabBar<TabItem: Tabbable, Content: View>: View {
         HStack {
             ForEach(self.items, id: \.self) { item in
                 self.tabItemStyle.tabItem(
-                    icon: item.icon,
-                    selectedIcon: item.selectedIcon,
+                    image: item.image,
                     title: item.title,
                     isSelected: self.selectedItem.selection == item
                 )

@@ -1,11 +1,12 @@
-// swift-tools-version:5.2
+// swift-tools-version:6.0
 
 import PackageDescription
 
 let package = Package(
     name: "TabBar",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v13),
+        .macCatalyst(.v17)
     ],
     products: [
         .library(

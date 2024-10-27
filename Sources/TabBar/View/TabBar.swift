@@ -101,6 +101,7 @@ public struct TabBar<TabItem: Tabbable, Content: View>: View {
             ZStack {
                 self.content
                     .environmentObject(self.selectedItem)
+                    .padding(.bottom, 50)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
 
                 VStack {
@@ -118,11 +119,7 @@ public struct TabBar<TabItem: Tabbable, Content: View>: View {
             }
         }
         .ignoresSafeArea(.keyboard)
-        .onPreferenceChange(TabBarPreferenceKey.self) { value in
-            self.items = value
-        }
     }
-    
 }
 
 extension TabBar {

@@ -32,6 +32,13 @@ public protocol Tabbable: Hashable {
     
     /// Title of `TabBar's` item.
     var title: String { get }
+
+}
+
+extension Tabbable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.title)
+    }
 }
 
 public extension Tabbable {

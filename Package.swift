@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "TabBar",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v17),
         .macCatalyst(.v17)
     ],
     products: [

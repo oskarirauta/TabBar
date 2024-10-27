@@ -36,6 +36,7 @@ public protocol Tabbable: Hashable {
 }
 
 extension Tabbable {
+    
     public func hash(into hasher: inout Hasher) {
         hasher.combine(self.title)
     }

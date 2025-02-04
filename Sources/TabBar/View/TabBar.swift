@@ -44,7 +44,7 @@ import SwiftUI
     .tabItem(style: CustomTabItemStyle())
  ```
  */
-public struct TabBar<TabItem: Tabbable, Content: View>: View {
+public struct TabBar<TabItem: Tabbable, Sendable, Content: View>: View {
     
     private let selectedItem: TabBarSelection<TabItem>
     private let content: Content
@@ -113,8 +113,8 @@ public struct TabBar<TabItem: Tabbable, Content: View>: View {
                 .edgesIgnoringSafeArea(.bottom)
                 .visibility(self.visibility)
             }
-            .onPreferenceChange(TabBarPreferenceKey.self) { value in
-                self.items = value
+            .onPreferenceChange(TabBarPreferenceKey.self) { [$items] value in
+                $items.wrappedValue = value
             }
         }
         .ignoresSafeArea(.keyboard)
